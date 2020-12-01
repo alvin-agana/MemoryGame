@@ -1,0 +1,211 @@
+html {
+	min-height: 100vh;
+	background: rgba(240, 254, 254, 0.5);
+}
+
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.overlay-text {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	display: none;
+	position: fixed;
+}
+
+.overlay-text.visible {
+  display: flex;
+}
+
+
+.game-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-gap: 10px;
+	margin: 10px;
+}
+
+
+.game-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	font-family: Roboto;
+	border-radius: 25px;
+	height: 40%;
+	padding: 30px;
+	margin: 30px;
+	text-align: center;
+	align-items: center;
+	background: rgba(143,241,135,0.2);
+	position: relative;
+	top: 25%;
+}
+
+.game-options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#question {
+	font-size: 18px;
+}
+
+#music-button-off {
+	background: #5bc0de;
+	border-radius: 5px;
+	margin: 5px;
+	color: white;
+	padding: 10px;
+}
+
+#music-button-on {
+	background: #5bc0de;
+	border-radius: 5px;
+	margin: 5px;
+	color: white;
+	padding: 10px;
+}
+
+#music-button {
+	background: #5bc0de;
+	border-radius: 5px;
+	margin: 5px;
+	color: white;
+	padding: 10px;
+}
+
+
+
+#time-button {
+	background: #D98880;
+	border-radius: 5px;
+	margin: 5px;
+	color: white;
+	padding: 10px;
+}
+
+#turns-button {
+	background: #D2B4DE;
+	border-radius: 5px;
+	margin: 5px;
+	color: white;
+	padding: 10px;
+}
+
+#music-button:hover, #time-button:hover, #turns-button:hover{
+	cursor: pointer;
+}
+
+#start-message {
+	visibility: visible;
+}
+
+
+
+.game-board {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+	box-shadow: 0 0 5px #888;
+	justify-content: center;
+	grid-gap: 10px;
+	padding: 5px;
+}
+
+.card {
+	position: relative;
+	height: 170px;
+	width: 120px;
+}
+
+.card:hover {
+	cursor: pointer;
+}
+
+.card-face {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backface-visibility: hidden;
+	border-radius: 3px;
+	transition: transform 250ms ease-in-out;
+}
+
+.card-front {
+	background-color: #FFFFE0;
+	border-color: #333;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg); /* WebKit */
+	-moz-transform: rotateY(180deg); /* Mozilla */
+	-o-transform: rotateY(180deg); /* Opera */
+	-ms-transform: rotateY(180deg); /* Internet Explorer */
+}
+
+.card-back {
+	background: linear-gradient(#B0E0E6, #AFEEEE);
+}
+
+.card.visible .card-back {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg); /* WebKit */
+	-moz-transform: rotateY(-180deg); /* Mozilla */
+	-o-transform: rotateY(-180deg); /* Opera */
+	-ms-transform: rotateY(-180deg); /* Internet Explorer */
+}
+
+.card.visible .card-front {
+	transform: rotateY(0);
+	-webkit-transform: rotateY(0); /* WebKit */
+	-moz-transform: rotateY(0); /* Mozilla */
+	-o-transform: rotateY(0); /* Opera */
+	-ms-transform: rotateY(0); /* Internet Explorer */
+	box-shadow: 0 0 5px 1px #D2B4DE;
+}
+
+.card.matched.dancing .card-img {
+	animation: dance 1s linear infinite 600ms;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: rotate(0)
+  }
+  25% {
+    transform: rotate(-15deg)
+  }
+  75% {
+    transform: rotate(15deg)
+  }
+}
+
+
+.music-creds {
+	font-family: Roboto;
+	grid-column: 2 / 2;
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+  .game-container {
+    grid-template-columns: repeat(2, auto)
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

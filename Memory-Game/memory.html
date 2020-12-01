@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memory Game</title>
+	<link rel="stylesheet" type="text/css" href="memory.css">
+	<script type="text/javascript" src="./script.js" async></script>
+	<script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+	</style>
+
+</head>
+<body>
+	<div class="overlay-text visible"></div>
+	<div class="overlay-text" id="overlay-text-win"></div>
+	<div class="overlay-text" id="overlay-text-lose"></div>
+	<div class="game-container">
+		<div class = "left-side">
+			<div class="game-info-container">
+				<span id="question">Can you find all the Pusheen cats?</span>
+				<div class="game-info-stats">
+					Time left: <span id="timer">90</span> seconds 
+				</div>
+				<div class="game-info-stats">
+					Number of turns: <span id="turns">0</span> turns
+				</div>
+
+				<div class="game-options">
+					<div id="music-button">Music: On</div>
+					<div id="time-button">Time: On</div>
+					<div id="turns-button">Turns: On</div>
+				</div>
+				<span id="start-message">Click anywhere to start!</span>
+			</div>
+		</div>
+		<div class="game-board">
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenLove.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png"> 
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenLove.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenSushi.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenSushi.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenDJ.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBear.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBear.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenDJ.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBread.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBread.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenCupid.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenCupid.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBowtie.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenBowtie.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenDoughnut.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenDoughnut.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenLaptop.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenLaptop.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenMermaid.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenNutella.png">
+				</div>
+			</div>
+
+			<div class="card col7">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenCake.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenMermaid.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenUnicorn.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenUnicorn.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenPizza.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenPizza.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenNutella.png">
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-face card-back">
+					<img src="Images/CloudFace.png">
+				</div>
+				<div class="card-face card-front">
+					<img class="card-img" src="Images/PusheenCake.png">					
+				</div>
+			</div>
+		</div>
+		<div class="music-creds">
+			Music is "Little Idea" by <a href="https://www.bensound.com/" target="_blank">Bensound</a>. Sounds effects by <a href="https://www.zapsplat.com/" target="_blank">Zapsplat.com</a>. All credits go to them. 
+		</div>
+
+	</div>
+</body>
+</html>
+
+
